@@ -51,8 +51,8 @@ label[for] {
 /* 탑바 시작 */
 .top-bar {
   height: 100px;
-  background-color: black;
-  color: white;
+  background-color: whitesmoke;
+  color: #aed1a1;
 }
 
 .top-bar .logo {
@@ -66,6 +66,7 @@ label[for] {
   display: flex;
   justify-content: space-between;
   height: 100%;
+  border-bottom: 5px solid #aed1a1;
 }
 
 .top-bar .menu-box-1 > ul {
@@ -83,8 +84,8 @@ label[for] {
 }
 
 .top-bar .menu-box-1 > ul > li:hover > a {
-  background-color: white;
-  color: black;
+  background-color: #aed1a1;
+  color: whitesmoke;
 }
 
 .top-bar .menu-box-1 ul > li {
@@ -92,7 +93,7 @@ label[for] {
 }
 
 .top-bar .menu-box-1 > ul ul {
-  background-color: black;
+  background-color: whitesmoke;
   display: none;
   position: absolute;
   z-index: 10;
@@ -111,20 +112,25 @@ label[for] {
   padding: 30px 0;
 }
 
+.top-bar .menu-box-1 > ul ul > li:first-child {
+  border-top: 5px solid #aed1a1;
+}
+
 .top-bar .menu-box-1 > ul ul > li:hover > a {
-  background-color: white;
-  color: black;
+  background-color: #aed1a1;
+  color: whitesmoke;
 }
 
 .mobile-top-bar {
   display: flex;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #aed1a1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
+  border-bottom: 5px solid #aed1a1;
 }
 
 .mobile-top-bar .logo {
@@ -143,7 +149,7 @@ label[for] {
   margin-left: 35px;
   width: 30px;
   height: 30px;
-  background-color: black;
+  background-color: white;
   position: relative;
 }
 
@@ -151,10 +157,15 @@ label[for] {
   position: absolute;
   width: 100%;
   height: 20%;
-  background-color: white;
+  background-color: #aed1a1;
   border-radius: 10px;
   top: 0;
   left: 0;
+  transition: top 0.2s 0.2s, transform 0.2s 0s, visibility 0s 0.2s;
+}
+
+.mobile-top-bar .btn-toggle-mobile-side-bar.active > div {
+  transition: top 0.2s 0s, transform 0.2s 0.2s, visibility 0s;
 }
 
 .mobile-top-bar .btn-toggle-mobile-side-bar > div:nth-child(2) {
@@ -165,12 +176,27 @@ label[for] {
   top: 80%;
 }
 
+.mobile-top-bar .btn-toggle-mobile-side-bar.active > div {
+  top: 40%;
+}
+
+.mobile-top-bar .btn-toggle-mobile-side-bar.active > div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.mobile-top-bar .btn-toggle-mobile-side-bar.active > div:nth-child(2) {
+  visibility: hidden;
+}
+
+.mobile-top-bar .btn-toggle-mobile-side-bar.active > div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
 .mobile-side-bar {
   display: block;
   text-align: center;
   margin-top: 100px;
-  background-color: black;
-  color: white;
+  color: #aed1a1;
   height: 100%;
   visibility: hidden;
   opacity: 0;
@@ -193,7 +219,6 @@ label[for] {
   width: 100%;
   padding: 30px 0;
   font-weight: bold;
-  font-size: 1.4rem;
 }
 
 .mobile-side-bar .menu-box-1 > ul ul {
@@ -201,10 +226,18 @@ label[for] {
 }
 
 .mobile-side-bar .menu-box-1 ul > li:hover > a {
-  background-color: white;
-  color: black;
+  color: white;
+  background-color: #aed1a1;
 }
 
 .mobile-side-bar .menu-box-1 > ul > li:hover > ul {
   display: block;
+}
+
+.mobile-side-bar .menu-box-1 > ul > li > a:not(:only-child)::after {
+  content: "[+]";
+}
+
+.mobile-side-bar .menu-box-1 > ul > li:hover > a:not(:only-child)::after {
+  content: "[-]";
 }
