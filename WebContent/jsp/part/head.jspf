@@ -1,31 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>이용빈 블로그</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/blog/resource/css/common.css" />
+    
+    <link rel="stylesheet" href="/blog/resource/css/home/main.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="/blog/resource/js/common.js"></script>
+    <script src="/blog/resource/js/home/main.js"></script>
   </head>
 
   <body>
     <div class="top-bar visible-on-md-up">
       <div class="con">
-        <a href="#" class="logo">
+        <a href="/blog/home/main" class="logo">
           <i class="fas fa-hiking"></i>
         </a>
 
         <nav class="menu-box-1">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a href="/blog/home/main">Home</a></li>
+            <li><a href="/blog/home/articles">Articles</a></li>
+            <li><a href="/blog/home/aboutMe">About Me</a></li>
             <li>
               <a href="#">SNS</a>
               <ul>
@@ -53,9 +58,9 @@
     <div class="mobile-side-bar visible-on-sm-down">
       <nav class="menu-box-1">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">About Me</a></li>
+          <li><a href="/blog/home/main">Home</a></li>
+          <li><a href="/blog/home/articles">Articles</a></li>
+          <li><a href="/blog/home/aboutMe">About Me</a></li>
           <li>
             <a href="#"">SNS</a>
             <ul>
@@ -67,5 +72,3 @@
         </ul>
       </nav>
     </div>
-  </body>
-</html>
