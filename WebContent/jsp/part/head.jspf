@@ -11,26 +11,25 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     />
     <link rel="stylesheet" href="/blog/resource/css/common.css" />
-    
-    <link rel="stylesheet" href="/blog/resource/css/home/main.css" />
+    <link rel="stylesheet" href="/blog/resource/css/s/home/main.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/blog/resource/js/common.js"></script>
-    <script src="/blog/resource/js/home/main.js"></script>
+    <script src="/blog/resource/js/s/home/main.js"></script>
   </head>
 
   <body>
     <div class="top-bar visible-on-md-up">
       <div class="con">
-        <a href="/blog/home/main" class="logo">
+        <a href="/blog/s/home/main" class="logo">
           <i class="fas fa-hiking"></i>
         </a>
 
         <nav class="menu-box-1">
           <ul>
-            <li><a href="/blog/home/main">Home</a></li>
-            <li><a href="/blog/home/articles">Articles</a></li>
-            <li><a href="/blog/home/aboutMe">About Me</a></li>
+            <li><a href="/blog/s/home/main">Home</a></li>
+            <li><a href="/blog/s/home/articles">Articles</a></li>
+            <li><a href="/blog/s/home/aboutMe">About Me</a></li>
             <li>
               <a href="#">SNS</a>
               <ul>
@@ -58,9 +57,9 @@
     <div class="mobile-side-bar visible-on-sm-down">
       <nav class="menu-box-1">
         <ul>
-          <li><a href="/blog/home/main">Home</a></li>
-          <li><a href="/blog/home/articles">Articles</a></li>
-          <li><a href="/blog/home/aboutMe">About Me</a></li>
+          <li><a href="/blog/s/home/main">Home</a></li>
+          <li><a href="/blog/s/home/articles">Articles</a></li>
+          <li><a href="/blog/s/home/aboutMe">About Me</a></li>
           <li>
             <a href="#"">SNS</a>
             <ul>
