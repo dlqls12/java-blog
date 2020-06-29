@@ -25,7 +25,7 @@
 				<td><%=article.getId()%></td>
 				<td><%=article.getRegDate()%></td>
 				<td><%=article.getUpdateDate()%></td>
-				<td><%=article.getTitle()%></td>
+				<td><a href="./detail?id=<%= article.getId()%>"><%=article.getTitle()%></a></td>
 			</tr>
 			<%
 				}

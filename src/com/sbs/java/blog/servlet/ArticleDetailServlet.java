@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -18,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.sbs.java.blog.dto.Article;
 import com.sbs.java.blog.util.DBUtil;
 
-@WebServlet("/s/home/list")
-public class ArticleListServlet extends HttpServlet {
+@WebServlet("/s/home/detail")
+public class ArticleDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
@@ -38,30 +35,27 @@ public class ArticleListServlet extends HttpServlet {
 		String password = "";
 
 		try (Connection connection = DriverManager.getConnection(url, user, password)) {
-			List<Article> articles = getArticles(connection);
-
-			request.setAttribute("articles", articles);
-			request.getRequestDispatcher("/jsp/home/list.jsp").forward(request, response);
-
+			int id = Integer.parseInt(request.getParameter("id"));
+			Article article = getArticle(connection, id);
+			
+			request.setAttribute("article", article);
+			request.getRequestDispatcher("/jsp/home/detail.jsp").forward(request, response);
+			
 		} catch (SQLException e) {
 			System.err.printf("[SQLException 예외, %s]%n", e.getMessage());
 			return;
 		}
 	}
 
-	private List<Article> getArticles(Connection connection) {
-
+	private Article getArticle(Connection connection, int id) {
 		String sql = "";
+		
 		sql += String.format("SELECT * ");
 		sql += String.format("FROM article ");
-		sql += String.format("ORDER BY id DESC ");
-
-		List<Map<String,Object>> rows = DBUtil.selectRows(connection, sql);
-		List<Article> articles = new ArrayList<>();
-		for ( Map<String, Object> row : rows ) {
-			articles.add(new Article(row));
-		}
+		sql += String.format("WHERE id = %d ", id);
 		
-		return articles;
+		Map<String,Object> row = DBUtil.selectRow(connection, sql);
+		
+		return new Article(row);
 	}
 }
