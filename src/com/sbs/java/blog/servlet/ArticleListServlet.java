@@ -33,9 +33,9 @@ public class ArticleListServlet extends HttpServlet {
 			return;
 		}
 
-		String url = "jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
-		String user = "root";
-		String password = "";
+		String url = "jdbc:mysql://site30.iu.gy:3306/site30?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
+		String user = "site30";
+		String password = "sbs123414";
 
 		try (Connection connection = DriverManager.getConnection(url, user, password)) {
 			List<Article> articles = getArticles(connection);

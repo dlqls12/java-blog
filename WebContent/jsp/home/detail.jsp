@@ -44,23 +44,29 @@
 	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 
 <div class="con">
-	<h1><%=article.getTitle()%></h1>
+	<section class="title-box">
+		<h1><%=article.getId()%>
+			:
+			<%=article.getTitle()%></h1><br>
+			<h3>작성날짜 : <%=article.getRegDate()%></h3>
+	</section>
 
-	<div id="origin1" style="display: none;"><%=article.getBody()%></div>
-	<div id="viewer1"></div>
-	<script>
-		var editor1__initialValue = $('#origin1').html();
-		var editor1 = new toastui.Editor({
-			el : document.querySelector('#viewer1'),
-			height : '600px',
-			initialValue : editor1__initialValue,
-			viewer : true,
-			plugins : [ toastui.Editor.plugin.codeSyntaxHighlight ]
-		});
-	</script>
+	<section class="body-box">
+		<div id="origin1" style="display: none;"><%=article.getBody()%></div>
+		<div id="viewer1"></div>
+		<script>
+			var editor1__initialValue = $('#origin1').html();
+			var editor1 = new toastui.Editor({
+				el : document.querySelector('#viewer1'),
+				height : '600px',
+				initialValue : editor1__initialValue,
+				viewer : true,
+				plugins : [ toastui.Editor.plugin.codeSyntaxHighlight ]
+			});
+		</script>
+	</section>
+	<h3>
+		<a href="./list">⬅리스트로 돌아가기</a>
+	</h3>
 </div>
-<h3>
-	<a href="./list">리스트로 이동하기</a>
-</h3>
-
 <%@ include file="/jsp/part/foot.jspf"%>
