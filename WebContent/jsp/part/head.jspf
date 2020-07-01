@@ -28,7 +28,7 @@
         <nav class="menu-box-1">
           <ul>
             <li><a href="/blog/s/home/main">Home</a></li>
-            <li><a href="/blog/s/home/articles">Articles</a></li>
+            <li><a href="/blog/s/home/cateItems">Articles</a></li>
             <li><a href="/blog/s/home/aboutMe">About Me</a></li>
             <li>
               <a href="#">SNS</a>
@@ -58,7 +58,7 @@
       <nav class="menu-box-1">
         <ul>
           <li><a href="/blog/s/home/main">Home</a></li>
-          <li><a href="/blog/s/home/articles">Articles</a></li>
+          <li><a href="/blog/s/home/cateItems">Articles</a></li>
           <li><a href="/blog/s/home/aboutMe">About Me</a></li>
           <li>
             <a href="#"">SNS</a>

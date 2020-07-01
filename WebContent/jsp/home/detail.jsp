@@ -1,10 +1,12 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.sbs.java.blog.dto.Article"%>
+<%@ page import="com.sbs.java.blog.dto.CateItem"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/part/head.jspf"%>
 <%
 	Article article = (Article) request.getAttribute("article");
+	CateItem cateItem = (CateItem) request.getAttribute("cateItem");
 %>
 
 <!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
@@ -47,8 +49,14 @@
 	<section class="title-box">
 		<h1><%=article.getId()%>
 			:
-			<%=article.getTitle()%></h1><br>
-			<h3>작성날짜 : <%=article.getRegDate()%></h3>
+			<%=article.getTitle()%></h1>
+		<br>
+		<h3>
+			카테고리 :
+			<%=cateItem.getName()%></h3>
+		<h3>
+			작성날짜 :
+			<%=article.getRegDate()%></h3>
 	</section>
 
 	<section class="body-box">
@@ -66,7 +74,7 @@
 		</script>
 	</section>
 	<h3>
-		<a href="./list">⬅리스트로 돌아가기</a>
+		<a href="./list?id=<%=cateItem.getId()%>&page=1">⬅리스트로 돌아가기</a>
 	</h3>
 </div>
 <%@ include file="/jsp/part/foot.jspf"%>

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sbs.java.blog.dto.Article;
+import com.sbs.java.blog.dto.CateItem;
 import com.sbs.java.blog.util.DBUtil;
 
 @WebServlet("/s/home/list")
@@ -38,9 +39,17 @@ public class ArticleListServlet extends HttpServlet {
 		String password = "sbs123414";
 
 		try (Connection connection = DriverManager.getConnection(url, user, password)) {
-			List<Article> articles = getArticles(connection);
+			int id = Integer.parseInt(request.getParameter("id"));
+			int page = Integer.parseInt(request.getParameter("page"));
+			int itemsInAPage = 10;
+			List<Article> articles = getArticles(connection, id, page, itemsInAPage);
+			CateItem cateItem = getCateItem(connection, id);
 
+			int totalPage = getFullPage(connection, id);
+			int limitFrom = totalPage/itemsInAPage;
+			request.setAttribute("limitFrom", limitFrom);
 			request.setAttribute("articles", articles);
+			request.setAttribute("cateItem", cateItem);
 			request.getRequestDispatcher("/jsp/home/list.jsp").forward(request, response);
 
 		} catch (SQLException e) {
@@ -49,19 +58,47 @@ public class ArticleListServlet extends HttpServlet {
 		}
 	}
 
-	private List<Article> getArticles(Connection connection) {
-
+	private int getFullPage(Connection connection, int id) {
 		String sql = "";
 		sql += String.format("SELECT * ");
 		sql += String.format("FROM article ");
+		sql += String.format("WHERE cateItemId = %d ", id);
+		
+		List<Map<String,Object>> rows = DBUtil.selectRows(connection, sql);
+		
+		int fullPage = rows.size();
+		return fullPage;
+	}
+	
+	private List<Article> getArticles(Connection connection, int id, int page, int itemsInAPage) {
+		
+		String sql = "";
+		sql += String.format("SELECT * ");
+		sql += String.format("FROM article ");
+		sql += String.format("WHERE displayStatus = 1 ");
+		sql += String.format("AND cateItemId = %d ", id);
 		sql += String.format("ORDER BY id DESC ");
+		sql += String.format("LIMIT %d, %d", (page-1)*itemsInAPage, itemsInAPage);
 
 		List<Map<String,Object>> rows = DBUtil.selectRows(connection, sql);
 		List<Article> articles = new ArrayList<>();
 		for ( Map<String, Object> row : rows ) {
 			articles.add(new Article(row));
 		}
-		
 		return articles;
+	}
+	
+	private CateItem getCateItem(Connection connection, int id) {
+
+		String sql = "";
+		sql += String.format("SELECT * ");
+		sql += String.format("FROM cateItem ");
+		sql += String.format("WHERE id = %d ", id);
+
+		Map<String,Object> row = DBUtil.selectRow(connection, sql);
+		
+		CateItem cateItem = new CateItem(row);
+		
+		return cateItem;
 	}
 }

@@ -246,7 +246,9 @@ label[for] {
 }
 
 .table-box {
+	height:497px;
 	background-color: white;
+	border-bottom:3px solid #aed1a1;
 }
 
 .table-box>table {
@@ -264,7 +266,7 @@ label[for] {
 }
 
 .table-box table tbody tr td {
-	width:300px;
+	width: 300px;
 	padding: 10px;
 	vertical-align: top;
 	border-bottom: 1px solid #aed1a1;
@@ -272,6 +274,10 @@ label[for] {
 
 .table-box table tbody tr td:first-child {
 	font-weight:bold;
+}
+
+.table-box table tbody tr td:nth-child(2):hover {
+	color:red;
 }
 
 .body-box {
@@ -289,4 +295,12 @@ label[for] {
 
 .list-box {
 	padding:20px;
+}
+
+.paging > a:hover {
+	color:red;
+}
+
+img {
+	margin:auto;
 }
