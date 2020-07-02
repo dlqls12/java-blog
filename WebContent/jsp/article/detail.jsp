@@ -6,8 +6,8 @@
 <%@ include file="/jsp/part/head.jspf"%>
 <%
 	int fullPage = (int) request.getAttribute("fullPage");
-	Article article = (Article) request.getAttribute("article");
-	CateItem cateItem = (CateItem) request.getAttribute("cateItem");
+Article article = (Article) request.getAttribute("article");
+CateItem cateItem = (CateItem) request.getAttribute("cateItem");
 %>
 
 <!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
@@ -49,15 +49,12 @@
 <div class="con">
 	<section class="title-box">
 		<h1><%=article.getId()%>
-			:
+			|
 			<%=article.getTitle()%></h1>
 		<br>
 		<h3>
 			카테고리 :
-			<%=cateItem.getName()%></h3>
-		<h3>
-			작성날짜 :
-			<%=article.getRegDate()%></h3>
+			<%=cateItem.getName()%> | 작성날짜 :<%=article.getRegDate()%></h3>
 	</section>
 
 	<section class="body-box">
@@ -94,5 +91,15 @@
 		<a href="./list?cateItemId=<%=cateItem.getId()%>&page=1">⬅리스트로
 			돌아가기</a>
 	</h3>
+	<div class="bottom">
+		<div>
+			<div class="yb">
+				<img src="../../resource/img/yb.png" alt="로고입니다." />
+			</div>
+			<div class="ment">
+				새싹 개발자 yb<br>웹 개발자가 되기 위해 공부중입니다.
+			</div>
+		</div>
+	</div>
 </div>
 <%@ include file="/jsp/part/foot.jspf"%>

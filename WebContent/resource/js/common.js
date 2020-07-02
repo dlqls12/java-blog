@@ -15,5 +15,4 @@ function MobileSideBar__init() {
   $(function() {
     MobileSideBar__init();
   });
-alert("환영합니다");
   

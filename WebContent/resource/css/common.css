@@ -30,6 +30,14 @@ label[for] {
 	margin-right: auto;
 }
 
+.frame {
+	display:flex;
+	flex-wrap : wrap;
+	width:1200px;
+	height:700px;
+	align-content: space-between;
+}
+
 .block {
 	display:block;
 	height:100px;
@@ -50,12 +58,15 @@ label[for] {
 		display: none !important;
 	}
 }
+body {
+	background-color:whitesmoke;
+}
 
 /* 탑바 시작 */
 .top-bar {
 	height: 100px;
-	background-color: whitesmoke;
-	color: #aed1a1;
+	background-color: #whitesmoke;
+	color: #261326;
 }
 
 .top-bar .logo {
@@ -69,7 +80,7 @@ label[for] {
 	display: flex;
 	justify-content: space-between;
 	height: 100%;
-	border-bottom: 5px solid #aed1a1;
+	border-bottom: 5px solid #261326;
 }
 
 .top-bar .menu-box-1>ul {
@@ -87,7 +98,7 @@ label[for] {
 }
 
 .top-bar .menu-box-1>ul>li:hover>a {
-	background-color: #aed1a1;
+	background-color: #261326;
 	color: whitesmoke;
 }
 
@@ -115,25 +126,29 @@ label[for] {
 	padding: 30px 0;
 }
 
+.top-bar .menu-box-1>ul ul>li {
+	border:1px solid #261326;
+}
+
 .top-bar .menu-box-1>ul ul>li:first-child {
-	border-top: 5px solid #aed1a1;
+	border-top: 5px solid #261326;
 }
 
 .top-bar .menu-box-1>ul ul>li:hover>a {
-	background-color: #aed1a1;
+	background-color:#261326;
 	color: whitesmoke;
 }
 
 .mobile-top-bar {
 	display: flex;
-	background-color: white;
-	color: #aed1a1;
+	background-color: whitesmoke;
+	color: #261326;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100px;
-	border-bottom: 5px solid #aed1a1;
+	border-bottom: 5px solid #261326;
 }
 
 .mobile-top-bar .logo {
@@ -160,7 +175,7 @@ label[for] {
 	position: absolute;
 	width: 100%;
 	height: 20%;
-	background-color: #aed1a1;
+	background-color: #261326;
 	border-radius: 10px;
 	top: 0;
 	left: 0;
@@ -197,12 +212,13 @@ label[for] {
 
 .mobile-side-bar {
 	position:fixed;
-	background-color:white;
+	background-color:whitesmoke;
 	display: none;
 	text-align: center;
-	color: #aed1a1;
+	color: #261326;
 	height: 100%;
 	width:100%;
+	z-index:100;
 }
 
 .mobile-side-bar.active {
@@ -227,8 +243,8 @@ label[for] {
 }
 
 .mobile-side-bar .menu-box-1 ul>li:hover>a {
-	color: white;
-	background-color: #aed1a1;
+	color: whitesmoke;
+	background-color: #261326;
 }
 
 .mobile-side-bar .menu-box-1>ul>li:hover>ul {
@@ -248,9 +264,8 @@ label[for] {
 }
 
 .table-box {
-	height:100%;
-	background-color: white;
-	border-bottom:3px solid #aed1a1;
+	border-top:5px solid #261326;
+	background-color: whitesmoke;
 }
 
 .table-box>table {
@@ -260,19 +275,20 @@ label[for] {
 }
 
 .table-box table thead tr th {
-	background-color:#aed1a1;
+	background-color:#9795A3;
 	padding: 10px;
 	font-weight: bold;
 	vertical-align: top;
-	color: black;
-	border-bottom: 3px solid green;
+	color: #261326;
+	border-bottom: 3px solid #261326;
 }
 
 .table-box table tbody tr td {
-	width: 300px;
+	background-color:whitesmoke;
+	width: 500px;
 	padding: 10px;
 	vertical-align: top;
-	border-bottom: 1px solid green;
+	border-bottom: 1px solid #9795A3;
 }
 
 .table-box table tbody tr td:first-child {
@@ -287,8 +303,15 @@ label[for] {
 	color:red;
 }
 
+.categery {
+	border:3px solid #261326;
+}
+
+.paging {
+	border-top:3px solid #261326;
+}
 .body-box {
-	border:3px solid #aed1a1;
+	border:3px solid #261326;
 	padding: 20px;
 }
 
@@ -300,14 +323,50 @@ label[for] {
 	display:inline-block;
 }
 
-.list-box {
-	padding:20px;
+.paging {
+	text-align:center;
 }
 
 .paging > a:hover {
 	color:red;
 }
 
-img {
-	margin:auto;
+.home-logo {
+	margin-top:20px;
+	text-align:center;
+}
+
+.mainment {
+	margin:20px;
+}
+
+.bottom {
+	width:1200px;
+	background-color:whitesmoke;
+	border-top:5px solid #261326;
+}
+
+.mainimg {
+	width:1200px;
+	height:300px;
+	background-color:whitesmoke;
+	border-top:5px solid #261326;
+}
+
+.bottom > div > div > img {
+	width:175px;
+}
+
+.bottom > div {
+	display:flex;
+	align-items:center;
+}
+
+.bottom > div > .ment {
+	display:flex;
+	font-size:2rem;
+}
+
+.noArticle {
+	height:500px;
 }
