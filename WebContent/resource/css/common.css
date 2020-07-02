@@ -30,6 +30,10 @@ label[for] {
 	margin-right: auto;
 }
 
+.block {
+	display:block;
+	height:100px;
+}
 /* 커스텀 */
 .con {
 	max-width: 1200px;
@@ -192,19 +196,17 @@ label[for] {
 }
 
 .mobile-side-bar {
-	display: block;
+	position:fixed;
+	background-color:white;
+	display: none;
 	text-align: center;
-	margin-top: 100px;
 	color: #aed1a1;
 	height: 100%;
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0.5s, opacity 0.5s;
+	width:100%;
 }
 
 .mobile-side-bar.active {
-	visibility: visible;
-	opacity: 1;
+	display:block;
 }
 
 .mobile-side-bar .menu-box-1>ul>li {
@@ -246,7 +248,7 @@ label[for] {
 }
 
 .table-box {
-	height:497px;
+	height:100%;
 	background-color: white;
 	border-bottom:3px solid #aed1a1;
 }
@@ -258,25 +260,30 @@ label[for] {
 }
 
 .table-box table thead tr th {
+	background-color:#aed1a1;
 	padding: 10px;
 	font-weight: bold;
 	vertical-align: top;
 	color: black;
-	border-bottom: 3px solid #aed1a1;
+	border-bottom: 3px solid green;
 }
 
 .table-box table tbody tr td {
 	width: 300px;
 	padding: 10px;
 	vertical-align: top;
-	border-bottom: 1px solid #aed1a1;
+	border-bottom: 1px solid green;
 }
 
 .table-box table tbody tr td:first-child {
 	font-weight:bold;
 }
 
-.table-box table tbody tr td:nth-child(2):hover {
+.article-list table tbody tr td:nth-child(2):hover {
+	color:red;
+}
+
+.category table tbody tr td:nth-child(3):hover {
 	color:red;
 }
 

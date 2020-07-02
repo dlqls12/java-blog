@@ -19,6 +19,7 @@
   </head>
 
   <body>
+  	<div class="block visible-on-sm-down"></div>
     <div class="top-bar visible-on-md-up">
       <div class="con">
         <a href="/blog/s/home/main" class="logo">

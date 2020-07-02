@@ -8,7 +8,7 @@
 %>
 <div class="con list-box">
 	<h1>카테고리 리스트</h1>
-	<div class="table-box">
+	<div class="table-box category">
 		<table>
 			<thead>
 				<tr>
@@ -24,7 +24,7 @@
 				<tr>
 					<td><%=cateItem.getId()%></td>
 					<td><%=cateItem.getRegDate()%></td>
-					<td><a href="./list?id=<%=cateItem.getId()%>&page=1"><%=cateItem.getName()%></a></td>
+					<td><a href="../article/list?cateItemId=<%=cateItem.getId()%>&page=1"><%=cateItem.getName()%></a></td>
 				</tr>
 				<%
 					}
