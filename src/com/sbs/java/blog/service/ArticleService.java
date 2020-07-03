@@ -38,5 +38,4 @@ public class ArticleService {
 	public int getRealFullPage() {
 		return articleDao.getRealFullPage();
 	}
-
 }

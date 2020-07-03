@@ -42,6 +42,11 @@ label[for] {
 	display:block;
 	height:100px;
 }
+
+.inline {
+	display:inline-block;
+	text-align:center;
+}
 /* 커스텀 */
 .con {
 	max-width: 1200px;
@@ -348,9 +353,13 @@ body {
 
 .mainimg {
 	width:1200px;
-	height:300px;
+	height:615px;
 	background-color:whitesmoke;
 	border-top:5px solid #261326;
+}
+
+.mainimg > img {
+	width:1200px;
 }
 
 .bottom > div > div > img {
@@ -369,4 +378,26 @@ body {
 
 .noArticle {
 	height:500px;
+}
+
+.category-box {
+	width:1200px;
+	padding-bottom:20px;
+	color:#261326;
+	border-bottom:5px solid #261326;
+}
+
+.category-box > div {
+	height:100%;
+}
+
+.category-box > div > a {
+	padding:20px;
+	font-size:1.3rem;
+	font-weight:bold;
+}
+
+.category-box > div > a:hover {
+	color:whitesmoke;
+	background-color:#261326;
 }

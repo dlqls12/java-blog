@@ -97,7 +97,7 @@ CateItem cateItem = (CateItem) request.getAttribute("cateItem");
 				<img src="../../resource/img/yb.png" alt="로고입니다." />
 			</div>
 			<div class="ment">
-				새싹 개발자 yb<br>웹 개발자가 되기 위해 공부중입니다.
+				dlqls0190@naver.com
 			</div>
 		</div>
 	</div>
