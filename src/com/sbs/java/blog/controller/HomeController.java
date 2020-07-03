@@ -35,7 +35,17 @@ public class HomeController extends Controller {
 	}
 
 	private String moveToCatelist(HttpServletRequest req, HttpServletResponse resp) {
+		int page = 1;
+		if (req.getParameter("page") != null) {
+			page = Integer.parseInt(req.getParameter("page"));
+		}
+		int itemsInAPage = 10;
+		int fullPage = articleService.getRealFullPage();
+		int totalPage = fullPage/itemsInAPage;
 		List<CateItem> cateItems = articleService.getForPrintListCateItems();
+		List<Article> articles = articleService.getForPrintListArticles(page, 0, itemsInAPage);
+		req.setAttribute("totalPage", totalPage);
+		req.setAttribute("articles", articles);
 		req.setAttribute("cateItems", cateItems);
 		return "home/cateItems";
 	}
