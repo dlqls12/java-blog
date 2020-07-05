@@ -30,22 +30,9 @@ label[for] {
 	margin-right: auto;
 }
 
-.frame {
-	display:flex;
-	flex-wrap : wrap;
-	width:1200px;
-	height:700px;
-	align-content: space-between;
-}
-
 .block {
+	padding:40px;
 	display:block;
-	height:100px;
-}
-
-.inline {
-	display:inline-block;
-	text-align:center;
 }
 /* 커스텀 */
 .con {
@@ -264,22 +251,62 @@ body {
 	content: "[-]";
 }
 
-.article-list-title {
-	padding: 15px;
+.body-box {
+	min-height:83vh;
 }
 
-.table-box {
-	border-top:5px solid #261326;
-	background-color: whitesmoke;
+.list-title {
+	padding:10px 20px;
+	font-weight:bold;
+	border-bottom:5px solid #261326;
 }
 
-.table-box>table {
+.main-title {
+	padding:10px 20px;
+	font-weight:bold;
+	border-bottom:5px solid #261326;
+}
+
+.detail-title {
+	padding:10px 20px;
+	font-weight:bold;
+}
+
+.main-img {
+	text-align:center;
+}
+
+.main-img > img {
+	width:1200px;
+}
+
+.cateItems {
+	border-bottom:5px solid #261326;
+}
+
+.cateItems > ul {
+	display:flex;
+	justify-content:flex-end;
+}
+
+.cateItems > ul > li > a {
+	display:block;
+	padding:20px 20px;
+	font-weight:bold;
+}
+
+.cateItems > ul > li:hover > a {
+	background-color:#261326;
+	color:whitesmoke;
+}
+
+.list-box > table {
 	border-collapse: collapse;
 	text-align: left;
-	line-height: 1.5;
+	line-height: 2.5;
 }
 
-.table-box table thead tr th {
+.list-box table thead tr th {
 	background-color:#9795A3;
 	padding: 10px;
 	font-weight: bold;
@@ -288,7 +315,7 @@ body {
 	border-bottom: 3px solid #261326;
 }
 
-.table-box table tbody tr td {
+.list-box table tbody tr td {
 	background-color:whitesmoke;
 	width: 500px;
 	padding: 10px;
@@ -296,107 +323,59 @@ body {
 	border-bottom: 1px solid #9795A3;
 }
 
-.table-box table tbody tr td:first-child {
+.list-box table tbody tr td:first-child {
 	font-weight:bold;
 }
 
-.article-list table tbody tr td:nth-child(2):hover {
+.category table tbody tr td:nth-child(2):hover {
 	color:red;
 }
 
-.category table tbody tr td:nth-child(3):hover {
+.paging > ul {
+	display:flex;
+	justify-content:center;
+}
+
+.paging > ul > li > a {
+	display:block;
+	padding:0 5px;
+}
+
+.paging > ul > li:hover > a {
 	color:red;
-}
-
-.categery {
-	border:3px solid #261326;
-}
-
-.paging {
-	border-top:3px solid #261326;
-}
-.body-box {
-	border:3px solid #261326;
-	padding: 20px;
-}
-
-.title-box {
-	padding:20px;
-}
-
-.title-box > h1 {
-	display:inline-block;
-}
-
-.paging {
-	text-align:center;
-}
-
-.paging > a:hover {
-	color:red;
-}
-
-.home-logo {
-	margin-top:20px;
-	text-align:center;
-}
-
-.mainment {
-	margin:20px;
 }
 
 .bottom {
-	width:1200px;
-	background-color:whitesmoke;
+	position:relative;
 	border-top:5px solid #261326;
-}
-
-.mainimg {
-	width:1200px;
-	height:615px;
-	background-color:whitesmoke;
-	border-top:5px solid #261326;
-}
-
-.mainimg > img {
-	width:1200px;
-}
-
-.bottom > div > div > img {
-	width:175px;
 }
 
 .bottom > div {
 	display:flex;
 	align-items:center;
+	justify-content:flex-end;
+	padding:0 20px;
 }
 
 .bottom > div > .ment {
 	display:flex;
-	font-size:2rem;
+	font-size:1.4rem;
 }
 
-.noArticle {
-	height:500px;
+.bottom > div > div > img {
+	display:flex;
+	width:55px;
 }
 
-.category-box {
-	width:1200px;
-	padding-bottom:20px;
-	color:#261326;
-}
-
-.category-box > div {
-	height:100%;
-}
-
-.category-box > div > a {
+.detail-box {
+	border:5px solid #261326;
 	padding:20px;
-	font-size:1.3rem;
-	font-weight:bold;
 }
 
-.category-box > div > a:hover {
-	color:whitesmoke;
-	background-color:#261326;
+.next-or-prev-button > a:hover {
+	color:red;
+}
+
+.return-button:hover {
+	color:red;
 }

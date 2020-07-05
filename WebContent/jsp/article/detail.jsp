@@ -47,50 +47,50 @@ CateItem cateItem = (CateItem) request.getAttribute("cateItem");
 	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 
 <div class="con">
-	<section class="title-box">
-		<h1><%=article.getId()%>
-			|
-			<%=article.getTitle()%></h1>
-		<br>
-		<h3>
-			카테고리 :
-			<%=cateItem.getName()%> | 작성날짜 :<%=article.getRegDate()%></h3>
-	</section>
-
-	<section class="body-box">
-		<div id="origin1" style="display: none;"><%=article.getBody()%></div>
-		<div id="viewer1"></div>
-		<script>
-			var editor1__initialValue = $('#origin1').html();
-			var editor1 = new toastui.Editor({
-				el : document.querySelector('#viewer1'),
-				height : '600px',
-				initialValue : editor1__initialValue,
-				viewer : true,
-				plugins : [ toastui.Editor.plugin.codeSyntaxHighlight ]
-			});
-		</script>
-	</section>
-	<div>
-		<%
-			if (article.getId() > 1) {
-		%>
-		<a href="detail?id=<%=article.getId() - 1%>">[이전글]</a>
-		<%
-			}
-		%>
-		<%
-			if (article.getId() < fullPage) {
-		%>
-		<a href="detail?id=<%=article.getId() + 1%>">[다음글]</a>
-		<%
-			}
-		%>
+	<div class="body-box">
+		<section class="detail-title">
+			<h1><%=article.getId()%>
+				|
+				<%=article.getTitle()%></h1>
+			<h3>
+				카테고리 :
+				<%=cateItem.getName()%> | 작성날짜 :<%=article.getRegDate()%></h3>
+		</section>
+		<section class="detail-box">
+			<div id="origin1" style="display: none;"><%=article.getBody()%></div>
+			<div id="viewer1"></div>
+			<script>
+				var editor1__initialValue = $('#origin1').html();
+				var editor1 = new toastui.Editor({
+					el : document.querySelector('#viewer1'),
+					height : '600px',
+					initialValue : editor1__initialValue,
+					viewer : true,
+					plugins : [ toastui.Editor.plugin.codeSyntaxHighlight ]
+				});
+			</script>
+		</section>
+		<div class="next-or-prev-button">
+			<%
+				if (article.getId() > 1) {
+			%>
+			<a href="detail?id=<%=article.getId() - 1%>">[이전글]</a>
+			<%
+				}
+			%>
+			<%
+				if (article.getId() < fullPage) {
+			%>
+			<a href="detail?id=<%=article.getId() + 1%>">[다음글]</a>
+			<%
+				}
+			%>
+		</div>
+		<h3 class="return-button">
+			<a href="./list?cateItemId=<%=cateItem.getId()%>&page=1">⬅리스트로
+				돌아가기</a>
+		</h3>
 	</div>
-	<h3>
-		<a href="./list?cateItemId=<%=cateItem.getId()%>&page=1">⬅리스트로
-			돌아가기</a>
-	</h3>
 	<div class="bottom">
 		<div>
 			<div class="yb">

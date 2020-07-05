@@ -31,7 +31,7 @@ public class HomeController extends Controller {
 	}
 
 	private String moveToAboutMe(HttpServletRequest req, HttpServletResponse resp) {
-		return "home/aboutMe";
+		return "home/aboutMe.jsp";
 	}
 
 	private String moveToCatelist(HttpServletRequest req, HttpServletResponse resp) {
@@ -42,15 +42,16 @@ public class HomeController extends Controller {
 		int itemsInAPage = 10;
 		int fullPage = articleService.getRealFullPage();
 		int totalPage = fullPage/itemsInAPage;
+		int paramPage = page;
 		List<CateItem> cateItems = articleService.getForPrintListCateItems();
 		List<Article> articles = articleService.getForPrintListArticles(page, 0, itemsInAPage);
 		req.setAttribute("totalPage", totalPage);
 		req.setAttribute("articles", articles);
 		req.setAttribute("cateItems", cateItems);
-		return "home/cateItems";
+		return "home/cateItems.jsp";
 	}
 
 	private String moveToMain(HttpServletRequest req, HttpServletResponse resp) {
-		return "home/main";
+		return "home/main.jsp";
 	}
 }

@@ -41,7 +41,7 @@ public class ArticleController extends Controller {
 		req.setAttribute("article", article);
 		req.setAttribute("cateItem", cateItem);
 		
-		return "article/detail";
+		return "article/detail.jsp";
 	}
 
 	private String doActionList(HttpServletRequest req, HttpServletResponse resp) {
@@ -63,6 +63,6 @@ public class ArticleController extends Controller {
 		req.setAttribute("totalPage", totalPage);
 		req.setAttribute("cateItem", cateItem);
 		req.setAttribute("articles", articles);
-		return "article/list";
+		return "article/list.jsp";
 	}
 }

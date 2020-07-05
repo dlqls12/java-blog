@@ -9,20 +9,20 @@
 	List<Article> articles = (List<Article>) request.getAttribute("articles");
 	CateItem cateItem = (CateItem) request.getAttribute("cateItem");
 %>
-<div class="con list-box">
-	<h1 class="mainment"><%=cateItem.getName()%>
-		게시판
-	</h1>
-	<div class="frame">
-		<div class="table-box article-list">
+<div class="con">
+	<div class="body-box">
+		<h1 class="list-title"><%=cateItem.getName()%>
+			게시판
+		</h1>
+		<div class="list-box articles">
 			<%
 				if (articles.size() == 0) {
 			%>
-			<h2 class="noArticle">게시물이 존재하지 않습니다. 😞</h2>
+			<h2>게시물이 존재하지 않습니다. 😞</h2>
 			<%
 				} else {
 			%>
-			<table>
+			<table class="con">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -49,26 +49,27 @@
 				</tbody>
 			</table>
 			<div class="paging">
-				<%
-					for (int i = 1; i <= totalPage + 1; i++) {
-				%>
-				<a href="./list?cateItemId=<%=cateItem.getId()%>&page=<%=i%>">[<%=i%>]
-				</a>
-				<%
-					}
-				%>
+				<ul>
+					<%
+						for (int i = 1; i <= totalPage + 1; i++) {
+					%>
+							<li><a href="./list?cateItemId=<%=cateItem.getId()%>&page=<%=i%>">[<%=i%>]</a></li>
+					<%
+						}
+					%>
+				</ul>
 			</div>
+			<%
+				}
+			%>
 		</div>
-		<%
-			}
-		%>
-		<div class="bottom">
-			<div>
-				<div class="yb">
-					<img src="../../resource/img/yb.png" alt="로고입니다." />
-				</div>
-				<div class="ment">dlqls0190@naver.com</div>
+	</div>
+	<div class="bottom">
+		<div>
+			<div class="yb">
+				<img src="../../resource/img/yb.png" alt="로고입니다." />
 			</div>
+			<div class="ment">dlqls0190@naver.com</div>
 		</div>
 	</div>
 </div>

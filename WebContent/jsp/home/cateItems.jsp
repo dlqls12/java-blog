@@ -9,31 +9,31 @@
 	List<CateItem> cateItems = (List<CateItem>) request.getAttribute("cateItems");
 	List<Article> articles = (List<Article>) request.getAttribute("articles");
 %>
-<div class="con list-box">
-	<h1 class="mainment"></h1>
-	<div class="frame">
-		<div class="category-box">
-			<%
-				for (CateItem cateItem : cateItems) {
-			%>
-
-			<div class="inline">
-				<a href="../article/list?cateItemId=<%=cateItem.getId()%>&page=1"><%=cateItem.getName()%></a>
-			</div>
-
-			<%
-				}
-			%>
+<div class="con">
+	<div class="body-box">
+		<div class="cateItems">
+			<ul>
+				<li><a href="../home/cateItems">전체</a></li>
+				<%
+					for (CateItem cateItem : cateItems) {
+				%>
+				<li>
+					<a href="../article/list?cateItemId=<%=cateItem.getId()%>&page=1"><%=cateItem.getName()%></a>
+				</li>
+				<%
+					}
+				%>
+			</ul>
 		</div>
-		<div class="table-box article-list">
+		<div class="list-box category">
 			<%
 				if (articles.size() == 0) {
 			%>
-			<h2 class="noArticle">게시물이 존재하지 않습니다. 😞</h2>
+			<h2>게시물이 존재하지 않습니다. 😞</h2>
 			<%
 				} else {
 			%>
-			<table>
+			<table class="con">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -57,15 +57,15 @@
 								for (int i = 0; i < cateItems.size(); i++) {
 							%> 
 							<%
- 									if (cateItems.get(i).getId() == article.getCateItemId()) {
- 							%> 
- 							<%=cateItems.get(i).getName()%>
- 							<%
- 							}
- 							%> 
- 							<%
- 							}
- 							%>
+							if (cateItems.get(i).getId() == article.getCateItemId()) {
+							%>
+							<%=cateItems.get(i).getName()%>
+							<%
+							}
+							%>
+							<%
+							}
+							%>
 						</td>
 					</tr>
 					<%
@@ -78,22 +78,25 @@
 			%>
 		</div>
 		<div class="paging">
+			<ul>
 				<%
 					for (int i = 1; i <= totalPage + 1; i++) {
 				%>
-				<a href="./cateItems?page=<%=i%>">[<%=i%>]
-				</a>
+				<li> 
+				<a href="./cateItems?page=<%=i%>">[<%=i%>]</a>
+				</li> 
 				<%
-					}
+				}
 				%>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom">
+		<div>
+			<div class="yb">
+				<img src="../../resource/img/yb.png" alt="로고입니다." />
 			</div>
-		<div class="bottom">
-			<div>
-				<div class="yb">
-					<img src="../../resource/img/yb.png" alt="로고입니다." />
-				</div>
-				<div class="ment">dlqls0190@naver.com</div>
-			</div>
+			<div class="ment">dlqls0190@naver.com</div>
 		</div>
 	</div>
 </div>
