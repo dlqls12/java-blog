@@ -5,6 +5,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/part/head.jspf"%>
 <%
+	int paramPage = (int) request.getAttribute("page");
 	int totalPage = (int) request.getAttribute("totalPage");
 	List<CateItem> cateItems = (List<CateItem>) request.getAttribute("cateItems");
 	List<Article> articles = (List<Article>) request.getAttribute("articles");
@@ -82,13 +83,22 @@
 				<%
 					for (int i = 1; i <= totalPage + 1; i++) {
 				%>
-				<li> 
+				<li class="<%=i == paramPage ? "current" : ""%>"> 
 				<a href="./cateItems?page=<%=i%>">[<%=i%>]</a>
 				</li> 
 				<%
 				}
 				%>
 			</ul>
+		</div>
+		<div class="con search-box">
+			<form action="${pageContext.request.contextPath}/s/article/list">
+			<input type="hidden" name="page" value="1" /> <input type="hidden"
+				name="cateItemId" value="${param.cateItemId}" /> <input
+				type="hidden" name="searchKeywordType" value="title" /> <input
+				type="text" name="searchKeyword" value="${param.searchKeyword}" />
+			<button type="submit">검색</button>
+		</form>
 		</div>
 	</div>
 	<div class="bottom">

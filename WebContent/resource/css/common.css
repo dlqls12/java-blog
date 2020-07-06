@@ -320,7 +320,7 @@ body {
 	font-weight: bold;
 	vertical-align: top;
 	color: #261326;
-	border-bottom: 3px solid #261326;
+	border-bottom: 5px solid #261326;
 }
 
 .list-box table tbody tr td {
@@ -342,6 +342,10 @@ body {
 .paging > ul {
 	display:flex;
 	justify-content:center;
+}
+
+.paging > ul > li.current > a {
+	color:red;
 }
 
 .paging > ul > li > a {
@@ -386,4 +390,15 @@ body {
 
 .return-button:hover {
 	color:red;
+}
+
+.search-box {
+	display:flex;
+	justify-content:center;
+}
+
+.about-me {
+	margin:20px 0px;
+	padding: 10px 30px;
+	border: 5px solid #261326;
 }

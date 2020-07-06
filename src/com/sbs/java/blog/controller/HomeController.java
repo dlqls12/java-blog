@@ -42,9 +42,9 @@ public class HomeController extends Controller {
 		int itemsInAPage = 10;
 		int fullPage = articleService.getRealFullPage();
 		int totalPage = fullPage/itemsInAPage;
-		int paramPage = page;
 		List<CateItem> cateItems = articleService.getForPrintListCateItems();
 		List<Article> articles = articleService.getForPrintListArticles(page, 0, itemsInAPage);
+		req.setAttribute("page", page);
 		req.setAttribute("totalPage", totalPage);
 		req.setAttribute("articles", articles);
 		req.setAttribute("cateItems", cateItems);

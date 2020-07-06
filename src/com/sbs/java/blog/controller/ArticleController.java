@@ -70,6 +70,7 @@ public class ArticleController extends Controller {
 		int totalPage = fullPage/itemsInAPage;
 		CateItem cateItem = articleService.getForPrintCateItem(cateItemId);
 		List<Article> articles = articleService.getForPrintListArticles(page, cateItemId, itemsInAPage);
+		req.setAttribute("page", page);
 		req.setAttribute("fullPage", fullPage);
 		req.setAttribute("totalPage", totalPage);
 		req.setAttribute("cateItem", cateItem);

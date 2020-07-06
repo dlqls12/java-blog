@@ -5,6 +5,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/part/head.jspf"%>
 <%
+	int paramPage = (int) request.getAttribute("page");
 	int fullPage = (int) request.getAttribute("fullPage");
 	int totalPage = (int) request.getAttribute("totalPage");
 	List<Article> articles = (List<Article>) request.getAttribute("articles");
@@ -54,7 +55,7 @@
 					<%
 						for (int i = 1; i <= totalPage + 1; i++) {
 					%>
-							<li><a href="./list?cateItemId=<%=cateItem.getId()%>&page=<%=i%>">[<%=i%>]</a></li>
+							<li class="<%=i == paramPage ? "current" : ""%>"><a href="./list?cateItemId=<%=cateItem.getId()%>&page=<%=i%>">[<%=i%>]</a></li>
 					<%
 						}
 					%>
