@@ -9,10 +9,6 @@ public class Article extends Dto {
 	private int cateItemId;
 	private int displayStatus;
 
-	public Article() {
-		
-	}
-
 	public Article(Map<String, Object> row) {
 		super(row);
 		this.updateDate = (String)row.get("updateDate");

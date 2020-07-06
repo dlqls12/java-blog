@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sbs.java.blog.dto.Article;
 import com.sbs.java.blog.dto.CateItem;
 import com.sbs.java.blog.service.ArticleService;
+import com.sbs.java.blog.util.Util;
 
 public class ArticleController extends Controller {
 	private ArticleService articleService;
@@ -29,7 +30,16 @@ public class ArticleController extends Controller {
 	}
 
 	private String doActionDetail(HttpServletRequest req, HttpServletResponse resp) {
-		int id = 0;
+		if (Util.empty(req, "id")) {
+			return "plain:id를 입력해주세요.";
+		}
+
+		if (Util.isNum(req, "id") == false) {
+			return "plain:id를 정수로 입력해주세요.";
+		}
+
+		int id = Util.getInt(req, "id");
+		
 		if (req.getParameter("id") != null) {
 			id = Integer.parseInt(req.getParameter("id"));
 		}
