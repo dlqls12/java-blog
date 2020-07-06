@@ -5,6 +5,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/part/head.jspf"%>
 <%
+	int fullPage = (int) request.getAttribute("fullPage");
 	int totalPage = (int) request.getAttribute("totalPage");
 	List<Article> articles = (List<Article>) request.getAttribute("articles");
 	CateItem cateItem = (CateItem) request.getAttribute("cateItem");
@@ -12,7 +13,7 @@
 <div class="con">
 	<div class="body-box">
 		<h1 class="list-title"><%=cateItem.getName()%>
-			게시판
+			게시판<div>총 게시물 수 : <%=fullPage %></div>
 		</h1>
 		<div class="list-box articles">
 			<%
